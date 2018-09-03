@@ -6,6 +6,9 @@ RUN apk update && \
         bash \
         vim \
         htop \
+        ncurses \
     && rm -rf /var/cache/apk/*
+
+COPY root /root
 
 CMD ["/bin/bash"]
