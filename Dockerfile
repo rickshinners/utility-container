@@ -1,4 +1,4 @@
-FROM alpine:3.7
+FROM alpine:3.17
 LABEL maintainer="rickshinners@gmail.com"
 
 RUN apk update && \
@@ -7,6 +7,8 @@ RUN apk update && \
         vim \
         htop \
         ncurses \
+	rsync \
+	util-linux \
     && rm -rf /var/cache/apk/*
 
 COPY root /root
