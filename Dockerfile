@@ -1,4 +1,4 @@
-FROM alpine:3.17
+FROM alpine:3.19
 LABEL maintainer="rickshinners@gmail.com"
 
 RUN apk update && \
@@ -8,7 +8,7 @@ RUN apk update && \
         htop \
         ncurses \
 	rsync \
-	util-linux \
+    && apk add perl-file-rename --repository=http://dl-cdn.alpinelinux.org/alpine/edge/testing/ \
     && rm -rf /var/cache/apk/*
 
 COPY root /root
